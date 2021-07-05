@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block header %}
+
+{% endblock header %}
+{% block body %}
+<table class="table table-borderless">
+  <thead class="border-bottom font-weight-bold">
+      <tr>
+          <td>ID</td>
+          <td>Name</td>
+          <td>Image</td>
+          <td>           
+          </td>
+      </tr>
+  </thead>
+  <tbody>
+      {% for student in students %}
+          <tr>
+              <td>{{student.ID}}</td>
+              <td>{{student.Name}}</td>
+              <td>{{student.ImagePath}}</td>
+              <td>
+
+              </td>
+          </tr>
+      {% endfor %}
+  </tbody>
+</table>
+{% endblock body %}
+
+

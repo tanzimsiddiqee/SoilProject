@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}About{% endblock title %}
+{% block header %}
+
+{% endblock header %}
+{% block body %}
+<form action="student" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+        {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+            {% if field.help_text %}
+            <p class="help">{{ field.help_text|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                Submit</button>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+
+</form>
+{% endblock body %}

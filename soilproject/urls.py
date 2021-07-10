@@ -15,10 +15,16 @@ Including another URLconf
 """
 from django.urls import path
 from . import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path("",views.index,name='home'),
     path("home",views.index,name='home'),
-    path("about",views.about,name='about'),
+    path("student",views.student,name='student'),
      path("contact",views.contact,name='contact')
 ]
+
+# only in development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

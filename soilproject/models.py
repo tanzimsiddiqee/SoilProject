@@ -6,4 +6,4 @@ class Students(models.Model):
     ImagePath = models.TextField()
     class Meta:
        managed = False
-       db_table = 'Students'
+       db_table = 'Student'

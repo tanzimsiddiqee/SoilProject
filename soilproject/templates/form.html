@@ -4,11 +4,12 @@
 
 {% endblock header %}
 {% block body %}
-<form action="student" method="post" enctype="multipart/form-data">
+<form action="add" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="row">
+        <div class="col-6">
         {% for field in form %}
-        <div class="fieldWrapper">
+        <div class="form-group">
             {{ field.errors }}
             {{ field.label_tag }} {{ field }}
             {% if field.help_text %}
@@ -16,15 +17,9 @@
             {% endif %}
         </div>
         {% endfor %}
-    </div>
-    <div class="row">
-        <div class="col-md-8">
-            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
-                Submit</button>
-        </div>
-        <div class="col-md-4">
+        <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+            Submit</button>
         </div>
     </div>
-
 </form>
 {% endblock body %}

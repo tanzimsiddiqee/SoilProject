@@ -19,10 +19,10 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path("",views.index,name='home'),
-    path("home",views.index,name='home'),
-    path("student",views.student,name='student'),
-     path("contact",views.contact,name='contact')
+    path("",views.index,name='Home'),
+    path("home",views.index,name='Home'),
+    path("add",views.add,name='Add New'),
+     path("contact",views.contact,name='Contact')
 ]
 
 # only in development

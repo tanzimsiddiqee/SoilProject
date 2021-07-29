@@ -8,19 +8,27 @@
 <table class="table table-borderless">
   <thead class="border-bottom font-weight-bold">
       <tr>
-          <td>ID</td>
-          <td>Name</td>
+          <td>Id</td>
+          <td>Sample</td>
+          <td>Sand</td>
+          <td>Silt</td>
+          <td>Clay</td>
+          <td>Type</td>
           <td>Image</td>
           <td>           
           </td>
       </tr>
   </thead>
   <tbody>
-      {% for student in students %}
+      {% for item in soils %}
           <tr>
-              <td>{{student.ID}}</td>
-              <td>{{student.Name}}</td>
-              <td><img class="w-25" src="{{student.ImagePath}}" alt=""></td>
+              <td>{{item.Id}}</td>
+              <td>{{item.Sample}}</td>
+              <td>{{item.Sand}}</td>
+              <td>{{item.Silt}}</td>
+              <td>{{item.Clay}}</td>
+              <td>{{item.Type}}</td>
+              <td><img class="w-25" src="{{item.ImagePath}}" alt=""></td>
               <td>
 
               </td>
